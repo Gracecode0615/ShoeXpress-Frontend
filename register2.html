@@ -1,0 +1,244 @@
+
+<?php
+include 'config.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if(isset($_POST['reg'])){
+	$username =  mysqli_real_escape_string($conn, $_POST['username']);
+	$phone = mysqli_real_escape_string($conn, $_POST['phone']);
+	$email = mysqli_real_escape_string($conn, $_POST['email']);
+	$password = mysqli_real_escape_string($conn, $_POST['password']);
+	$passwordh = password_hash($password, PASSWORD_DEFAULT);
+
+	$sql = "INSERT INTO `user` (`username`,`phone`,`email`,`password`) VALUES('$username','$phone','$email','$passwordh')";
+	$query =mysqli_query($conn, $sql);
+	if($query){
+		echo"<div class='alert alert-success'>Register successfully</div>";
+		header('location: login.php');
+	}else{
+		echo"<div class='alert alert-danger'>Register failed!</div>";
+	}
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+<body>
+
+    <!--Top Header-->
+    <div class="top-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10 col-sm-8 col-md-5 col-lg-4">
+                    <div class="currency-picker">
+                        <span class="selected-currency">NG</span>
+                        <ul id="currencies">
+                            <li data-currency="INR" class="">INR</li>
+                            <li data-currency="GBP" class="">GBP</li>
+                            <li data-currency="CAD" class="">CAD</li>
+                            <li data-currency="NG" class="selected">NG</li>
+                            <li data-currency="AUD" class="">AUD</li>
+                            <li data-currency="EUR" class="">EUR</li>
+                            <li data-currency="JPY" class="">JPY</li>
+                        </ul>
+                    </div>
+                    <div class="language-dropdown">
+                        <span class="language-dd">English</span>
+                        <ul id="language">
+                            <li class="">German</li>
+                            <li class="">French</li>
+                        </ul>
+                    </div>
+                    <p class="phone-no"><i class="anm anm-phone-s"></i> +234 70 38 2906 72</p>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
+                    <div class="text-center"><p class="top-header_middle-text"> Worldwide Express Shipping</p></div>
+                </div>
+                <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
+                    <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
+                    <ul class="customer-links list-inline">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Create Account</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Top Header-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+                <div class="mb-4">
+                    <form method="post" action="" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">	
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <div class="form-group">
+                                  <label for="CustomerEmail">Username</label>
+                                  <input type="text" name="username" placeholder="" id="CustomerName" class="" autocorrect="off" autocapitalize="off" autofocus="">
+                              </div>
+                          </div>
+
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <div class="form-group">
+                                  <label for="CustomerEmail">Phone number</label>
+                                  <input type="tel" name="phone" placeholder="" id="CustomerNumber" class="" autocorrect="off" autocapitalize="off" autofocus="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <div class="form-group">
+                                  <label for="CustomerEmail">Email</label>
+                                  <input type="email" name="email" placeholder="" id="CustomerEmail" class="" autocorrect="off" autocapitalize="off" autofocus="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <div class="form-group">
+                                  <label for="CustomerPassword">Password</label>
+                                  <input type="password" value="" name="password" placeholder="" id="CustomerPassword" class="">                        	
+                              </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                              <!-- <input type="submit" class="btn mb-3" name="reg" value="Sign up"> -->
+                               <button type="submit" class="btn mt-5 mb-3" id="submit"  name="reg" >Sign up</button>
+
+                              <p class="mb-4">
+                                  <!-- <p>This&nbsp;is&nbsp;an&nbsp;example&nbsp;of&nbsp;using&nbsp;non-breaking&nbsp;spaces.</p> -->
+                              <a href="#" id="RecoverPassword">Already have an Account?</a> &nbsp; | &nbsp;
+                                <a href="login.html" id="customer_register_link">Login</a>
+                              </p>
+                          </div>
+                       </div>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!--Footer-->
+     <footer id="footer">
+        <div class="newsletter-section">
+            <div class="container">
+                <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 w-100 d-flex justify-content-start align-items-center">
+                            <div class="display-table">
+                                <div class="display-table-cell footer-newsletter">
+                                    <div class="section-header text-center">
+                                        <label class="h2"><span>sign up for </span>newsletter</label>
+                                    </div>
+                                    <form action="#" method="post">
+                                        <div class="input-group">
+                                            <input type="email" class="input-group__field newsletter__input" name="EMAIL" value="" placeholder="Email address" required="">
+                                            <span class="input-group__btn">
+                                                <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe"><span class="newsletter__submit-text--large">Subscribe</span></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-5 d-flex justify-content-end align-items-center">
+                            <div class="footer-social">
+                                <ul class="list--inline site-footer__social-icons social-icons">
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="Facebook"><i class="icon icon-facebook"></i></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="Twitter"><i class="icon icon-twitter"></i> <span class="icon__fallback-text">Twitter</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="Pinterest"><i class="icon icon-pinterest"></i> <span class="icon__fallback-text">Pinterest</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="Instagram"><i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="Tumblr"><i class="icon icon-tumblr-alt"></i> <span class="icon__fallback-text">Tumblr</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="YouTube"><i class="icon icon-youtube"></i> <span class="icon__fallback-text">YouTube</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title="Vimeo"><i class="icon icon-vimeo-alt"></i> <span class="icon__fallback-text">Vimeo</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>    
+        </div>
+        <div class="site-footer">
+            <div class="container">
+                <!--Footer Links-->
+                <div class="footer-top">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4 class="h4">Quick Shop</h4>
+                            <ul>
+                                <li><a href="#">Women</a></li>
+                                <li><a href="#">Men</a></li>
+                                <li><a href="#">Kids</a></li>
+                                <li><a href="#">Sportswear</a></li>
+                                <li><a href="#">Sale</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4 class="h4">Informations</h4>
+                            <ul>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                                <li><a href="#">Terms &amp; condition</a></li>
+                                <li><a href="register.html">My Account</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4 class="h4">Customer Services</h4>
+                            <ul>
+                                <li><a href="#">Request Personal Data</a></li>
+                                <li><a href="faqs.html">FAQ's</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="faqs.html">Orders and Returns</a></li>
+                                <li><a href="contact-us.html">Support Center</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
+                            <h4 class="h4">Contact Us</h4>
+                            <ul class="addressFooter">
+                                <li><i class="icon anm anm-map-marker-al"></i><p>alx hub</p></li>
+                                <li class="phone"><i class="icon anm anm-phone-s"></i><p>(+234) 000 000 0000</p></li>
+                                <li class="email"><i class="icon anm anm-envelope-l"></i><p>sales@yousite.com</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--End Footer Links-->
+                <hr>
+                <div class="footer-bottom">
+                    <div class="row">
+                        <!--Footer Copyright-->
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left"><span></span>ShoeXpress</a></div>
+                        <!--End Footer Copyright-->
+                        <!--Footer Payment Icon-->
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
+                            <ul class="payment-icons list--inline">
+                                <li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-mastercard" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-discover" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-paypal" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-cc-amex" aria-hidden="true"></i></li>
+                                <li><i class="icon fa fa-credit-card" aria-hidden="true"></i></li>
+                            </ul>
+                        </div>
+                        <!--End Footer Payment Icon-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

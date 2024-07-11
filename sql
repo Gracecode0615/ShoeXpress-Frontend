@@ -1,0 +1,1 @@
+CREATE TABLE `shoexpress`.`user` (`id` INT(100) NOT NULL AUTO_INCREMENT , `username` VARCHAR(255) NOT NULL , `phone` VARCHAR(255) NOT NULL , `email` TEXT NOT NULL , `password` VARCHAR(255) NOT NULL , `reg` TIMESTAMP(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
