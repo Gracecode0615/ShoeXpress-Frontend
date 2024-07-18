@@ -71,6 +71,7 @@ if (isset($_POST['reg'])){
                 	<div class="mb-4">
                        <form method="post" action="" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">	
                           <div class="row">
+                            <?php if(isset($php_errormsg)) echo $php_errormsg; ?>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="form-group">
                                     <label for="CustomerEmail">Email</label>

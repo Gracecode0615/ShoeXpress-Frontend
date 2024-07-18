@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShoeExpress - Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Shop Shoes</h1>
+    <div class="product" data-id="1">
+        <h2>Product 1</h2>
+        <p>$50.00</p>
+        <button class="add-to-cart" data-id="1">Add to Cart</button>
+    </div>
+    <div class="product" data-id="2">
+        <h2>Product 2</h2>
+        <p>$75.00</p>
+        <button class="add-to-cart" data-id="2">Add to Cart</button>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="scripts.js"></script>
+    <script src="">
+        $(document).ready(function() {
+        $('.add-to-cart').click(function() {
+        var productId = $(this).data('id');
+        $.ajax({
+            url: 'add_to_cart.php',
+            type: 'POST',
+            data: { id: productId },
+            success: function(response) {
+                alert('Product added to cart');
+            },
+            error: function() {
+                alert('Error adding product to cart');
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

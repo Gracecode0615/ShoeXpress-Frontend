@@ -63,8 +63,8 @@
                     <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
                         <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
                         <ul class="customer-links list-inline">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Create Account</a></li>
+                            <li><a href="login.php">Login</a></li>
+                            <li><a href="register.php">Create Account</a></li>
                             <li><a href="wishlist.html">Wishlist</a></li>
                         </ul>
                     </div>
@@ -549,7 +549,7 @@
                                                 <label class="form-check-label">
                                                     <input type="checkbox" class="form-check-input" value=""> Remember me!
                                                 </label>
-                                                <a href="forgot.html" class="float-right">Forgot your password?</a>
+                                                <a href="forget.php" class="float-right">Forgot your password?</a>
                                             </div>
                                             <button type="submit" class="btn btn-primary mt-3">Submit</button>
                                         </div>
@@ -663,7 +663,7 @@
                                 <div class="row">
                                     <div class="form-group form-check col-md-12 col-lg-12 col-xl-12">
                                         <label class="form-check-label padding-15px-left">
-                                            <input type="checkbox" class="form-check-input" value=""><a href="register.html" style="text-decoration: none;"><strong>Create an account ?</strong></a>
+                                            <input type="checkbox" class="form-check-input" value=""><a href="register.php" style="text-decoration: none;"><strong>Create an account ?</strong></a>
                                         </label>
                                     </div>
                                 </div>
@@ -701,21 +701,21 @@
                                         <tr>
                                             <td class="text-left">Baseball</td>
                                             <td>$99</td>
-                                            <td>S</td>
+                                            <td>43</td>
                                             <td>1</td>
                                             <td>$99</td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">Sneaker</td>
                                             <td>$199</td>
-                                            <td>M</td>
+                                            <td>40</td>
                                             <td>2</td>
                                             <td>$298</td>
                                         </tr>
                                         <tr>
                                             <td class="text-left">Sneaker1</td>
                                             <td>$299</td>
-                                            <td>XL</td>
+                                            <td>42</td>
                                             <td>3</td>
                                             <td>$398</td>
                                         </tr>
@@ -786,7 +786,7 @@
                                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                 <label for="input-country">Credit Card Type <span class="required-f">*</span></label>
                                                                 <select name="country_id" class="form-control">
-                                                                    <option value=""> --- Please Select --- </option>
+                                                                    <option value="" selected disabled> --- Please Select --- </option>
                                                                     <option value="1">American Express</option>
                                                                     <option value="2">Visa Card</option>
                                                                     <option value="3">Master Card</option>
@@ -859,13 +859,13 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-5 d-flex justify-content-end align-items-center">
                             <div class="footer-social">
                                 <ul class="list--inline site-footer__social-icons social-icons">
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="Facebook"><i class="icon icon-facebook"></i></a></li>
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="Twitter"><i class="icon icon-twitter"></i> <span class="icon__fallback-text">Twitter</span></a></li>
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="Pinterest"><i class="icon icon-pinterest"></i> <span class="icon__fallback-text">Pinterest</span></a></li>
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="Instagram"><i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span></a></li>
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="Tumblr"><i class="icon icon-tumblr-alt"></i> <span class="icon__fallback-text">Tumblr</span></a></li>
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="YouTube"><i class="icon icon-youtube"></i> <span class="icon__fallback-text">YouTube</span></a></li>
-                                    <li><a class="social-icons__link" href="#" target="_blank" title="Vimeo"><i class="icon icon-vimeo-alt"></i> <span class="icon__fallback-text">Vimeo</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" Facebook"><i class="icon icon-facebook"></i></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" Twitter"><i class="icon icon-twitter"></i> <span class="icon__fallback-text">Twitter</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" Pinterest"><i class="icon icon-pinterest"></i> <span class="icon__fallback-text">Pinterest</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" Instagram"><i class="icon icon-instagram"></i> <span class="icon__fallback-text">Instagram</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" Tumblr"><i class="icon icon-tumblr-alt"></i> <span class="icon__fallback-text">Tumblr</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" YouTube"><i class="icon icon-youtube"></i> <span class="icon__fallback-text">YouTube</span></a></li>
+                                    <li><a class="social-icons__link" href="#" target="_blank" title=" Vimeo"><i class="icon icon-vimeo-alt"></i> <span class="icon__fallback-text">Vimeo</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -873,45 +873,45 @@
             </div>    
         </div>
         <div class="site-footer">
-        	<div class="container">
-     			<!--Footer Links-->
-            	<div class="footer-top">
-                	<div class="row">
-                    	<div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        	<h4 class="h4">Quick Shop</h4>
+            <div class="container">
+                <!--Footer Links-->
+                <div class="footer-top">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                            <h4 class="h4">Quick Shop</h4>
                             <ul>
-                            	<li><a href="#">Women</a></li>
-                                <li><a href="#">Men</a></li>
-                                <li><a href="#">Kids</a></li>
-                                <li><a href="#">Sportswear</a></li>
-                                <li><a href="#">Sale</a></li>
+                                <li><a href="home5-cosmetic.html">Women</a></li>
+                                <li><a href="home7-shoes.html">Men</a></li>
+                                <li><a href="shop-left-sidebar.html">Kids</a></li>
+                                <li><a href="home9-parallax.html">Sportswear</a></li>
+                                <li><a href="./404.html">Sale</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        	<h4 class="h4">Informations</h4>
+                            <h4 class="h4">Informations</h4>
                             <ul>
-                            	<li><a href="about-us.html">About us</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Privacy policy</a></li>
-                                <li><a href="#">Terms &amp; condition</a></li>
-                                <li><a href="register.html">My Account</a></li>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li><a href="blog-article.html">Careers</a></li>
+                                <li><a href="product-quantity-message.html">Privacy policy</a></li>
+                                <li><a href="product-shipping-message.html">Terms &amp; condition</a></li>
+                                <li><a href="register.php">My Account</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        	<h4 class="h4">Customer Services</h4>
+                            <h4 class="h4">Customer Services</h4>
                             <ul>
-                            	<li><a href="#">Request Personal Data</a></li>
+                                <li><a href="#">Request Personal Data</a></li>
                                 <li><a href="faqs.html">FAQ's</a></li>
                                 <li><a href="contact-us.html">Contact Us</a></li>
-                                <li><a href="faqs.html">Orders and Returns</a></li>
+                                <li><a href="product-quantity-message.html">Orders and Returns</a></li>
                                 <li><a href="contact-us.html">Support Center</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
-                        	<h4 class="h4">Contact Us</h4>
+                            <h4 class="h4">Contact Us</h4>
                             <ul class="addressFooter">
-                            	<li><i class="icon anm anm-map-marker-al"></i><p>alx hub</p></li>
-                                <li class="phone"><i class="icon anm anm-phone-s"></i><p>(+234) 000 000 0000</p></li>
+                                <li><i class="icon anm anm-map-marker-al"></i><p>alx hub</p></li>
+                                <li class="phone"><i class="icon anm anm-phone-s"></i><p>+234 7038290672</p></li>
                                 <li class="email"><i class="icon anm anm-envelope-l"></i><p>sales@yousite.com</p></li>
                             </ul>
                         </div>
@@ -920,14 +920,14 @@
                 <!--End Footer Links-->
                 <hr>
                 <div class="footer-bottom">
-                	<div class="row">
-                    	<!--Footer Copyright-->
-	                	<div class="col-12 col-sm-12 col-md-3 col-lg-3 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left"><span></span>ShoeXpress</a></div>
+                    <div class="row">
+                        <!--Footer Copyright-->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left"><span></span> <a href="">ShoeXpress</a></div>
                         <!--End Footer Copyright-->
                         <!--Footer Payment Icon-->
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
-                        	<ul class="payment-icons list--inline">
-                        		<li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-0 order-md-1 order-lg-1 order-sm-0 payment-icons text-right text-md-center">
+                            <ul class="payment-icons list--inline">
+                                <li><i class="icon fa fa-cc-visa" aria-hidden="true"></i></li>
                                 <li><i class="icon fa fa-cc-mastercard" aria-hidden="true"></i></li>
                                 <li><i class="icon fa fa-cc-discover" aria-hidden="true"></i></li>
                                 <li><i class="icon fa fa-cc-paypal" aria-hidden="true"></i></li>
@@ -960,5 +960,4 @@
 </div>
 </body>
 
-<!-- belle/checkout.html   11 Nov 2019 12:44:33 GMT -->
 </html>
