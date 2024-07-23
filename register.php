@@ -116,6 +116,12 @@
 
 
             <!--Body Content-->
+            <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
+                    <a href="index.html">
+                    	<!-- <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" /> -->
+                         <h2><strong>Shoe</strong>Xpress</h2>
+                    </a>
+                </div>
             <div id="page-content">
                 <!--Page Title-->
                 <div class="page section-header text-center">
